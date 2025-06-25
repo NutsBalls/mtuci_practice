@@ -16,12 +16,12 @@ func infoAboutStudent(s *Student) {
 	fmt.Printf("Студент под именем %s, родился в %d году. Он учится на %d курсе и имеет средний балл %.2f\n", s.Name, s.Year, s.Course, s.GPA)
 }
 
-func (s Student) GetAge() int {
+func (s Student) getAge() int {
 	currentYear := time.Now().Year()
 	return currentYear - s.Year
 }
 
-func (s Student) GetStatus() string {
+func (s Student) getStatus() string {
 	switch {
 	case s.GPA >= 4.5:
 		return "отличник"
@@ -37,5 +37,5 @@ func main() {
 
 	infoAboutStudent(&student)
 
-	fmt.Printf("Студенту %d лет и он %s", student.GetAge(), student.GetStatus())
+	fmt.Printf("Студенту %d лет и он %s", student.getAge(), student.getStatus())
 }

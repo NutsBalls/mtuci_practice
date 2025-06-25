@@ -10,7 +10,7 @@ func main() {
 
 		prime := true
 		for _, value := range primeNums {
-			if value%value > i {
+			if value*value > i {
 				break
 			}
 
